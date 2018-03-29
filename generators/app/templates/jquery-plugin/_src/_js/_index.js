@@ -1,6 +1,6 @@
 /*!
-  jQuery <%= projectName %> plugin
-  @name jquery.<%= projectName %>.js
+  jQuery <%= name %> plugin
+  @name jquery.<%= name %>.js
   @author <%= author %> (<%= email %>)
   @version 1.0
   @date <%= new Date().toLocaleDateString() %>
@@ -10,7 +10,7 @@
 */
 (function ($) {
 
-  var myPlugin, defaultOptions, __bind;
+  var <%= name %>, defaultOptions, __bind;
 
   __bind = function (fn, me) {
     return function () {
@@ -23,13 +23,12 @@
     myvar1: 1,
     myvar2: 2,
     myvar3: 3,
-    resizeDelay: 50
     //etc...
   };
 
-  myPlugin = (function (options) {
+  <%= name %> = (function (options) {
 
-    function myPlugin(handler, options) {
+    function <%= name %>(handler, options) {
       this.handler = handler;
 
       // Extend default options.
@@ -39,39 +38,35 @@
       this.update = __bind(this.update, this);
       this.init = __bind(this.init, this);
 
-      // Listen to resize event if requested.
-      if (this.autoResize) {
-        $(window).bind('resize.myPlugin', this.onResize);
-      };
     };
 
     // Method for updating the plugins options.
-    myPlugin.prototype.update = function (options) {
+    <%= name %>.prototype.update = function (options) {
       $.extend(true, this, options);
     };
 
     // Example API function.
-    myPlugin.prototype.resizeFunc = function () {
+    <%= name %>.prototype.resizeFunc = function () {
       //...do something when window is resized
     };
 
     // Main method.
-    myPlugin.prototype.init = function () {
+    <%= name %>.prototype.init = function () {
       //...do something to initialise plugin
     };
 
-    return myPlugin;
+    return <%= name %>;
   })();
 
-  $.fn.myPlugin = function (options) {
-    // Create a myPlugin instance if not available.
-    if (!this.myPluginInstance) {
-      this.myPluginInstance = new myPlugin(this, options || {});
+  $.fn.<%= name %> = function (options) {
+    // Create a <%= name %> instance if not available.
+    if (!this.<%= name %>Instance) {
+      this.<%= name %>Instance = new <%= name %>(this, options || {});
     } else {
-      this.myPluginInstance.update(options || {});
+      this.<%= name %>Instance.update(options || {});
     }
 
-    $.extend(true, this, this.myPluginInstance);
+    $.extend(true, this, this.<%= name %>Instance);
 
     // Init plugin.
     this.init();

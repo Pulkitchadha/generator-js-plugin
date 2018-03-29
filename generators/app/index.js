@@ -15,7 +15,7 @@ const QUESTIONS = [
     choices: CHOICES
   },
   {
-    name: 'projectName',
+    name: 'name',
     type: 'input',
     message: 'Project name:',
     validate: function(input) {
@@ -27,7 +27,13 @@ const QUESTIONS = [
     name: 'description',
     type: 'input',
     message: 'Project description',
-    default: ''
+    default: 'A jquery plugin'
+  },
+  {
+    name: 'version',
+    type: 'input',
+    message: 'Current version',
+    default: '0.0.0'
   },
   {
     name: 'author',
@@ -57,9 +63,9 @@ module.exports = class extends Generator {
     return this.prompt(QUESTIONS).then(answers => {
       this.answers = answers;
 
-      const { projectChoice, projectName } = answers;
+      const { projectChoice, name } = answers;
       const templatePath = `${__dirname}/templates/${projectChoice}`;
-      const projectDir = `${CURR_DIR}/${projectName}`;
+      const projectDir = `${CURR_DIR}/${name}`;
 
       if (!fs.existsSync(projectDir)) {
         fs.mkdirSync(projectDir);
@@ -77,7 +83,7 @@ module.exports = class extends Generator {
       this.templatePath(`${this.answers.templatePath}/_README.md`),
       this.destinationPath(`${this.answers.projectDir}/README.md`),
       {
-        projectName: this.answers.projectName,
+        name: this.answers.name,
         description: this.answers.description
       }
     );
@@ -85,32 +91,27 @@ module.exports = class extends Generator {
       this.templatePath(`${this.answers.templatePath}/_index.html`),
       this.destinationPath(`${this.answers.projectDir}/index.html`),
       {
-        projectName: this.answers.projectName
+        name: this.answers.name
       }
     );
     this.fs.copy(
       this.templatePath(`${this.answers.templatePath}/_lib/bootstrap.min.css`),
-      this.destinationPath(`${this.answers.projectDir}/lib/bootstrap.min.css`),
-      {
-        projectName: this.answers.projectName
-      }
+      this.destinationPath(`${this.answers.projectDir}/lib/bootstrap.min.css`)
     );
     this.fs.copy(
       this.templatePath(`${this.answers.templatePath}/_lib/jquery-1.9.1.js`),
-      this.destinationPath(`${this.answers.projectDir}/lib/jquery-1.9.1.js`),
-      {
-        projectName: this.answers.projectName
-      }
+      this.destinationPath(`${this.answers.projectDir}/lib/jquery-1.9.1.js`)
     );
     this.fs.copyTpl(
       this.templatePath(`${this.answers.templatePath}/_src/_js/_index.js`),
       this.destinationPath(`${this.answers.projectDir}/src/js/index.js`),
       {
-        projectName: this.answers.projectName,
+        name: this.answers.name,
         description: this.answers.description,
         email: this.answers.email,
         company: this.answers.company,
-        author: this.answers.author
+        author: this.answers.author,
+        website: this.answers.website
       }
     );
   }

@@ -18,6 +18,7 @@ const QUESTIONS = [
     name: 'name',
     type: 'input',
     message: 'Project name:',
+    default: this.appname, // Default to current folder name
     validate: function(input) {
       if (/^([A-Za-z\-_\d])+$/.test(input)) return true;
       return 'Project name may only include letters, numbers, underscores and hashes.';
@@ -52,6 +53,12 @@ const QUESTIONS = [
     type: 'input',
     message: 'Company',
     default: ''
+  },
+  {
+    name: 'website',
+    type: 'input',
+    message: 'Website',
+    default: ''
   }
 ];
 
@@ -82,37 +89,17 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath(`${this.answers.templatePath}/_README.md`),
       this.destinationPath(`${this.answers.projectDir}/README.md`),
-      {
-        name: this.answers.name,
-        description: this.answers.description
-      }
+      this.answers
     );
     this.fs.copyTpl(
       this.templatePath(`${this.answers.templatePath}/_index.html`),
       this.destinationPath(`${this.answers.projectDir}/index.html`),
-      {
-        name: this.answers.name
-      }
-    );
-    this.fs.copy(
-      this.templatePath(`${this.answers.templatePath}/_lib/bootstrap.min.css`),
-      this.destinationPath(`${this.answers.projectDir}/lib/bootstrap.min.css`)
-    );
-    this.fs.copy(
-      this.templatePath(`${this.answers.templatePath}/_lib/jquery-1.9.1.js`),
-      this.destinationPath(`${this.answers.projectDir}/lib/jquery-1.9.1.js`)
+      this.answers
     );
     this.fs.copyTpl(
       this.templatePath(`${this.answers.templatePath}/_src/_js/_index.js`),
       this.destinationPath(`${this.answers.projectDir}/src/js/index.js`),
-      {
-        name: this.answers.name,
-        description: this.answers.description,
-        email: this.answers.email,
-        company: this.answers.company,
-        author: this.answers.author,
-        website: this.answers.website
-      }
+      this.answers
     );
   }
 

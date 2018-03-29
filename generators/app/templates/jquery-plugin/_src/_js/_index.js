@@ -72,6 +72,6 @@
     this.init();
 
     // return jQuery object to maintain chainability.
-    return this;
+    return this.<%= name %>Instance;
   };
 })(jQuery);

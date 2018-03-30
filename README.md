@@ -3,7 +3,6 @@
 
 ## Documentation
 * [Website](https://pulkitchadha.github.io/generator-js-plugin/)
-* Demo (coming soon)
 
 ## Installation
 

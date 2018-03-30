@@ -1,19 +1,19 @@
-# generator-js-project [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> It is a template for jquery plugins, node projects and many more.
+# generator-js-plugin [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+> It is a template for jquery plugin.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-js-project using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-js-plugin using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g javascript-plugin-generator
+npm install -g generator-js-plugin
 ```
 
 Then generate your new project:
 
 ```bash
-yo js-project
+yo js-plugin
 ```
 
 ## Getting To Know Yeoman
@@ -28,9 +28,9 @@ yo js-project
 MIT © [pulkitchdha]()
 
 
-[npm-image]: https://badge.fury.io/js/generator-js-project.svg
-[npm-url]: https://npmjs.org/package/generator-js-project
-[travis-image]: https://travis-ci.org/Pulkitchadha/generator-js-project.svg?branch=master
-[travis-url]: https://travis-ci.org/Pulkitchadha/generator-js-project
-[daviddm-image]: https://david-dm.org/Pulkitchadha/generator-js-project.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/Pulkitchadha/generator-js-project
+[npm-image]: https://badge.fury.io/js/generator-js-plugin.svg
+[npm-url]: https://npmjs.org/package/generator-js-plugin
+[travis-image]: https://travis-ci.org/Pulkitchadha/generator-js-plugin.svg?branch=master
+[travis-url]: https://travis-ci.org/Pulkitchadha/generator-js-plugin
+[daviddm-image]: https://david-dm.org/Pulkitchadha/generator-js-plugin.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/Pulkitchadha/generator-js-plugin

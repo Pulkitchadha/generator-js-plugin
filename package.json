@@ -1,17 +1,15 @@
 {
-	"name": "generator-js-project",
+	"name": "generator-js-plugin",
 	"version": "0.0.0",
-	"description":
-		"It is a template for jquery plugins, node projects and many more.",
-	"homepage": "",
+	"description": "It is a template for jquery plugin.",
+	"homepage": "https://github.com/Pulkitchadha/javascript-plugin-generator",
 	"author": {
 		"name": "pulkitchdha",
-		"email": "pulkitchadha27@gmail.com",
-		"url": ""
+		"email": "pulkitchadha27@gmail.com"
 	},
 	"files": ["generators"],
 	"main": "generators/index.js",
-	"keywords": ["jquery", "node", "yeoman-generator"],
+	"keywords": ["template", "jquery", "yeoman", "yeoman-generator"],
 	"devDependencies": {
 		"yeoman-test": "^1.7.0",
 		"yeoman-assert": "^3.1.0",

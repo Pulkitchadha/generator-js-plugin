@@ -1,6 +1,10 @@
 # generator-js-plugin [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > It is a template for jquery plugin.
 
+## Documentation
+* [Website](https://pulkitchadha.github.io/generator-js-plugin/)
+* Demo (coming soon)
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-js-plugin using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).

@@ -7,7 +7,7 @@ First, install [Yeoman](http://yeoman.io) and generator-js-project using [npm](h
 
 ```bash
 npm install -g yo
-npm install -g generator-js-project
+npm install -g javascript-plugin-generator
 ```
 
 Then generate your new project:
